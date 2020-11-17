@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	log "github.com/spotahome/redis-operator/log"
+	log "github.com/jesstracy/redis-operator/log"
 	mock "github.com/stretchr/testify/mock"
 )
 
