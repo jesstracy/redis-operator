@@ -4,7 +4,7 @@ VERSION := v1.0.1
 SERVICE_NAME := redis-operator
 
 # Docker image name for this project
-IMAGE_NAME := $(SERVICE_NAME)
+IMAGE_NAME := spotahome-$(SERVICE_NAME)
 
 # Repository url for this project
 REPOSITORY := 831096501748.dkr.ecr.us-east-1.amazonaws.com/$(IMAGE_NAME)
