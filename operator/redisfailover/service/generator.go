@@ -12,8 +12,8 @@ import (
 	"k8s.io/apimachinery/pkg/util/intstr"
 	"bytes"
 
-	redisfailoverv1 "github.com/spotahome/redis-operator/api/redisfailover/v1"
-	"github.com/spotahome/redis-operator/operator/redisfailover/util"
+	redisfailoverv1 "github.com/jesstracy/redis-operator/api/redisfailover/v1"
+	"github.com/jesstracy/redis-operator/operator/redisfailover/util"
 	"text/template"
 )
 
@@ -254,7 +254,7 @@ func generateRedisStatefulSet(rf *redisfailoverv1.RedisFailover, labels map[stri
 			ServiceName: name,
 			Replicas:    &rf.Spec.Redis.Replicas,
 			UpdateStrategy: appsv1.StatefulSetUpdateStrategy{
-				Type: v1.OnDeleteStatefulSetStrategyType,
+				Type: v1.RollingUpdateStatefulSetStrategyType,
 			},
 			PodManagementPolicy: v1.ParallelPodManagement,
 			Selector: &metav1.LabelSelector{
